@@ -1,0 +1,53 @@
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">ML Project</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right center">
+          <label class="upload-button">
+            <input  type="file"
+                    class="hidden"
+                    multiple="true"
+                    ngFileSelect
+                    [options]="options"
+                    (onUpload)="handleMultipleUpload($event)">
+                     Select Files
+          </label>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="cont" data-pct="0">
+      <svg id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+        <circle id="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+      </svg>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table *ngIf="response.length" class="table">
+        <thead>
+          <tr>
+            <th>File Name</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of response">
+            <td>{{item.originalName}}</td>
+            <td>{{item.statusText}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

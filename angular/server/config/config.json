@@ -1,0 +1,13 @@
+{
+	"httpPort": 8080,
+	"mongoose": {
+		"uri": "mongodb://localhost/eve",
+		"options": {
+			"server": {
+				"socketOptions": {
+					"keepAlive": 1
+				}
+			}
+		}
+	}
+}
